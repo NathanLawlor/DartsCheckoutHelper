@@ -40,7 +40,7 @@ class CheckoutHelper: ObservableObject {
         var remainingScore = currentScore
 
         // Set preferred score
-        var preferredScore = preferredDouble * 2
+        let preferredScore = preferredDouble * 2
 
         // Reduce current score to preferred double score, or set up for checkout on any other double
         reduceScoreDecision = .checkPreferredCheckout
@@ -111,7 +111,7 @@ class CheckoutHelper: ObservableObject {
     private func usePossibleCheckout(_ currentScore: Int, _ remainingScore: inout Int, reduceTo preferredScore: Int, _ checkout: inout Checkout) {
         for number in stride(from: 20, to: 1, by: -1) {
             let remainderFromTriple = remainingScore - (number * 3)
-            let remainderFromDouble = remainingScore - (number * 2)
+//            let remainderFromDouble = remainingScore - (number * 2)
             let remainderFromSingle = remainingScore - (number * 1)
 
             if remainderFromSingle < preferredScore && remainderFromSingle % 2 == 0 {
@@ -147,7 +147,7 @@ class CheckoutHelper: ObservableObject {
         // Reduce score to desired score as close as possible
         for number in stride(from: 20, to: 1, by: -1) {
             let remainderFromTriple = remainingScore - (number * 3)
-            let remainderFromDouble = remainingScore - (number * 2)
+//            let remainderFromDouble = remainingScore - (number * 2)
             let remainderFromSingle = remainingScore - (number * 1)
 
             if remainderFromTriple > preferredScore {
